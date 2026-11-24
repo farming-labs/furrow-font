@@ -1,0 +1,56 @@
+{
+  "name": "@farming-labs/graft",
+  "version": "0.2.0",
+  "description": "Graft and Graft Mono, variable fonts blended from Geist with Public Sans and JetBrains Mono.",
+  "license": "OFL-1.1",
+  "homepage": "https://graft.farming-labs.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farming-labs/graft-font.git",
+    "directory": "package"
+  },
+  "keywords": [
+    "font",
+    "variable-font",
+    "graft",
+    "geist",
+    "monospace",
+    "next-font"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "font",
+    "fonts",
+    "*.css",
+    "OFL.txt"
+  ],
+  "exports": {
+    "./font/sans": {
+      "types": "./font/sans.d.ts",
+      "default": "./font/sans.js"
+    },
+    "./font/mono": {
+      "types": "./font/mono.d.ts",
+      "default": "./font/mono.js"
+    },
+    "./sans.css": "./sans.css",
+    "./mono.css": "./mono.css",
+    "./graft.css": "./graft.css",
+    "./fonts/*": "./fonts/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "prepack": "node scripts/copy-fonts.mjs"
+  },
+  "peerDependencies": {
+    "next": ">=13.2.0"
+  },
+  "peerDependenciesMeta": {
+    "next": {
+      "optional": true
+    }
+  }
+}

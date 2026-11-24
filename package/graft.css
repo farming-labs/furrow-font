@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Graft";
+  src: url("./fonts/Graft-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graft Mono";
+  src: url("./fonts/GraftMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-graft-sans: "Graft", ui-sans-serif, system-ui, sans-serif;
+  --font-graft-mono: "Graft Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
