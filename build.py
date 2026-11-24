@@ -60,6 +60,11 @@ FAMILIES = {
         # Glyphs that keep Geist's drawing whatever the mix: Geist Mono's
         # slashed zero reads better in code than JetBrains Mono's dotted one.
         "keep": ("zero",),
+        # Characters drawn with the second font's design whatever the mix, in
+        # every form both fonts draw (numerators, denominators). Their two
+        # designs differ in structure, so there is no blend between them, and
+        # these are the shapes that make the mono read as its own face.
+        "take": ("r", "l", "6", "9"),
         "output": "fonts/GraftMono[wght]",
     },
 }
@@ -545,6 +550,13 @@ def build_family(key, cfg):
     for name in todo:
         if name in cfg.get("keep", ()):
             kept[name] = "kept by choice"
+            continue
+        if todo[name][2] in cfg.get("take", ()):
+            glyphs = [copy.deepcopy(o[name][5]) for o in outlines]
+            if len({(len(g.coordinates), tuple(g.endPtsOfContours), bytes(g.flags)) for g in glyphs}) != 1:
+                raise BuildError(f"`{name}` from the second font changes point structure across masters.")
+            blended[name] = glyphs
+            swapped[name] = "taken by choice"
             continue
         a0, b0 = outlines[default_index][name][:2]
         if not a0 and not b0:

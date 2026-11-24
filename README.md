@@ -16,12 +16,12 @@ The name comes from gardening: a graft joins two plants so they grow as one.
 
 | | Graft | Graft Mono |
 |---|---|---|
-| Glyphs blended, taken from the second font, or rebuilt from those parts | 623 | 718 |
-| Glyphs kept from Geist | 352 | 441 |
-| Letters and figures drawn whole by the second font | `J Q f g` | none |
-| Letters and figures kept whole from Geist | none | `G J Q Y l r u 3 4 6 7 8 9` |
+| Glyphs blended, taken from the second font, or rebuilt from those parts | 623 | 730 |
+| Glyphs kept from Geist | 352 | 429 |
+| Letters and figures drawn whole by the second font | `J Q f g` | `r l 6 9`, by choice |
+| Letters and figures kept whole from Geist | none | `G J Q Y u 3 4 7 8` |
 
-The mono keeps Geist Mono's slashed `0` by choice (`keep` in `build.py`).
+The mono keeps Geist Mono's slashed `0` by choice (`keep` in `build.py`), and takes JetBrains Mono's `r`, `l`, `6` and `9` whole (`take`). Their two designs differ in structure, so no blend exists between them, and they are the letters that make the mono read as its own face.
 
 Tabular, fraction, superscript and subscript figures (`tnum`, `frac`, `sups`, `subs`) are blended too, and tabular figures share one width at every weight.
 
@@ -100,7 +100,7 @@ The package also works with Farm.js `localFont` (`src: "@farming-labs/graft/font
 
 ## Change the look
 
-Set `mix` in `FAMILIES` in `build.py`: `0` is pure Geist, `1` is pure Public Sans (or JetBrains Mono), and `0.3` leans toward Geist. Above 0.5, letters that can't be blended take the second font's drawing; at or below, Geist's. List glyph names in `keep` to hold Geist's drawing whatever the mix. Rebuild and run `verify.py`.
+Set `mix` in `FAMILIES` in `build.py`: `0` is pure Geist, `1` is pure Public Sans (or JetBrains Mono), and `0.3` leans toward Geist. Above 0.5, letters that can't be blended take the second font's drawing; at or below, Geist's. List glyph names in `keep` to hold Geist's drawing whatever the mix, or characters in `take` to use the second font's drawing. Rebuild and run `verify.py`.
 
 ## License
 
