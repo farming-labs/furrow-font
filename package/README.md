@@ -2,7 +2,7 @@
 
 **Graft and Graft Mono as an npm package: variable fonts from 100 to 900, for Next.js, Farm.js or plain CSS.**
 
-Graft blends Geist with Public Sans, and Graft Mono blends Geist Mono with JetBrains Mono. Weights match Geist's, so `font-weight: 600` is as heavy as it is in Geist. Specimen and downloads: [graft.farming-labs.dev](https://graft.farming-labs.dev).
+`font-weight: 600` is as heavy in Graft Mono as it is in Graft, so interface text and code match. Specimen and downloads: [graft.farming-labs.dev](https://graft.farming-labs.dev).
 
 ```sh
 npm install @farming-labs/graft
@@ -10,7 +10,7 @@ npm install @farming-labs/graft
 
 ## Next.js
 
-The same shape as the `geist` package. Each export is a `next/font/local` font with a CSS variable.
+Each export is a `next/font/local` font with a CSS variable.
 
 ```tsx
 // app/layout.tsx
@@ -90,8 +90,7 @@ code {
 
 - It ships one variable file per family, not one file per weight.
 - It has no italics yet.
-- Kerning and OpenType features come from Geist.
 
 ## License
 
-SIL Open Font License 1.1. Graft is a derivative of Geist, Public Sans and JetBrains Mono. See `OFL.txt` and the [repository](https://github.com/farming-labs/graft-font).
+SIL Open Font License 1.1. `OFL.txt` carries the license and the copyright notices it requires. Source: the [repository](https://github.com/farming-labs/graft-font).

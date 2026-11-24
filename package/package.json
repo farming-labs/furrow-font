@@ -1,7 +1,7 @@
 {
   "name": "@farming-labs/graft",
   "version": "0.2.0",
-  "description": "Graft and Graft Mono, variable fonts blended from Geist with Public Sans and JetBrains Mono.",
+  "description": "Graft and Graft Mono, a sans and a mono for interfaces and code, variable from 100 to 900.",
   "license": "OFL-1.1",
   "homepage": "https://graft.farming-labs.dev",
   "repository": {
@@ -13,7 +13,6 @@
     "font",
     "variable-font",
     "graft",
-    "geist",
     "monospace",
     "next-font"
   ],
