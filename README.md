@@ -36,7 +36,14 @@ import { GraftSans } from "@farming-labs/graft/font/sans";
 import { GraftMono } from "@farming-labs/graft/font/mono";
 ```
 
-Farm.js: load the published files with `remoteFont`, which downloads them during the build and serves them from your app, or point `localFont` at the package.
+Farm.js 0.1.85 or later: each export is a Farm `localFont` with a CSS variable.
+
+```tsx
+import { GraftSans } from "@farming-labs/graft/farm/sans";
+import { GraftMono } from "@farming-labs/graft/farm/mono";
+```
+
+Without the package, load the published files with `remoteFont`, which downloads them during the build and serves them from your app.
 
 ```tsx
 import { remoteFont } from "@farm.js/core/font";

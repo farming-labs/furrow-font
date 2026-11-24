@@ -14,7 +14,8 @@
     "variable-font",
     "graft",
     "monospace",
-    "next-font"
+    "next-font",
+    "farmjs"
   ],
   "type": "module",
   "sideEffects": [
@@ -22,6 +23,7 @@
   ],
   "files": [
     "font",
+    "farm",
     "fonts",
     "*.css",
     "OFL.txt"
@@ -35,6 +37,14 @@
       "types": "./font/mono.d.ts",
       "default": "./font/mono.js"
     },
+    "./farm/sans": {
+      "types": "./farm/sans.d.ts",
+      "default": "./farm/sans.js"
+    },
+    "./farm/mono": {
+      "types": "./farm/mono.d.ts",
+      "default": "./farm/mono.js"
+    },
     "./sans.css": "./sans.css",
     "./mono.css": "./mono.css",
     "./graft.css": "./graft.css",
@@ -45,9 +55,13 @@
     "prepack": "node scripts/copy-fonts.mjs"
   },
   "peerDependencies": {
+    "@farm.js/core": ">=0.1.85",
     "next": ">=13.2.0"
   },
   "peerDependenciesMeta": {
+    "@farm.js/core": {
+      "optional": true
+    },
     "next": {
       "optional": true
     }

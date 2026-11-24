@@ -37,10 +37,28 @@ Then use `var(--font-graft-sans)` and `var(--font-graft-mono)`, or in Tailwind v
 
 ## Farm.js
 
-`localFont` reads the files straight from the package and fingerprints them.
+Each export is a Farm `localFont` with a CSS variable. Needs `@farm.js/core` 0.1.85 or later.
 
 ```tsx
 // src/app/layout.tsx
+import { defineLayoutFonts } from "@farm.js/core/font";
+import { GraftSans } from "@farming-labs/graft/farm/sans";
+import { GraftMono } from "@farming-labs/graft/farm/mono";
+
+export const fonts = defineLayoutFonts({ body: GraftSans, code: GraftMono });
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${GraftSans.variable} ${GraftMono.variable}`}>
+      <body className={GraftSans.className}>{children}</body>
+    </html>
+  );
+}
+```
+
+On an older Farm, point `localFont` at the package's files instead:
+
+```tsx
 import { localFont } from "@farm.js/core/font";
 
 const graft = localFont({
@@ -48,13 +66,6 @@ const graft = localFont({
   family: "Graft",
   weight: "100 900",
   variable: "--font-graft-sans",
-});
-
-const graftMono = localFont({
-  src: "@farming-labs/graft/fonts/GraftMono-Variable.woff2",
-  family: "Graft Mono",
-  weight: "100 900",
-  variable: "--font-graft-mono",
 });
 ```
 
